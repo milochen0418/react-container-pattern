@@ -8,14 +8,30 @@ class CounterContainer extends Component {
     this.increment = () => {
       this.setState(state => ({ count: state.count + 1 }));
     };
+    this.decrement = () => {
+      this.setState(state => ({ count: state.count - 1 }));
+    };
+    this.reset = () => {
+      this.setState({ count: 0 });
+    };
   }
 
   render() {
     const { count } = this.state;
     return (
       <div>
-        <Counter count={count} onIncrement={this.increment} />
-        <Counter count={count} onIncrement={this.increment} />
+        <Counter
+          count={count}
+          onIncrement={this.increment}
+          onDecrement={this.decrement}
+          onReset={this.reset}
+        />
+        <Counter
+          count={count}
+          onIncrement={this.increment}
+          onDecrement={this.decrement}
+          onReset={this.reset}
+        />
       </div>
     );
   }
