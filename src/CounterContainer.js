@@ -6,10 +6,12 @@ class CounterContainer extends Component {
     super(props);
     this.state = { count: 0 };
     this.increment = () => {
-      this.setState(state => ({ count: state.count + 1 }));
+      //this.setState(state => ({ count: state.count + 1 }));
+      this.setState({ count: this.state.count + 1 });
     };
     this.decrement = () => {
-      this.setState(state => ({ count: state.count - 1 }));
+      //this.setState(state => ({ count: state.count - 1 }));
+      this.setState({ count: this.state.count - 1 });
     };
     this.reset = () => {
       this.setState({ count: 0 });
